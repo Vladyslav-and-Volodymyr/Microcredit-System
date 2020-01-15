@@ -24,9 +24,9 @@ namespace Microcredit_System.Windows
     public partial class ChangeDebtWindow : Window
     {
         private Client _client;
-        private UserControlDebtors _userControlDebtors;
+        private UserControl _userControl;
 
-        internal ChangeDebtWindow(Client client, UserControlDebtors userControlDebtors)
+        internal ChangeDebtWindow(Client client, UserControl userControl)
         {
             InitializeComponent();
 
@@ -38,7 +38,7 @@ namespace Microcredit_System.Windows
             txtSurname.Text = client.Surname;
 
             this._client = client;
-            this._userControlDebtors = userControlDebtors;
+            this._userControl = userControl;
         }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -57,7 +57,9 @@ namespace Microcredit_System.Windows
         {
             Database.DB.ChangeDebt(_client, float.Parse(txtDelta.Text));
             txtDebt.Text = _client.Debt.ToString();
-            _userControlDebtors.Refresh();
+
+            RefreshParentControl();
+
             txtDelta.Text = "";
         }
 
@@ -65,8 +67,20 @@ namespace Microcredit_System.Windows
         {
             Database.DB.ChangeDebt(_client, -1 * float.Parse(txtDelta.Text));
             txtDebt.Text = _client.Debt.ToString();
-            _userControlDebtors.Refresh();
+            RefreshParentControl();
             txtDelta.Text = "";
+        }
+
+        private void RefreshParentControl()
+        {
+            if (_userControl is UserControlDebtors)
+            {
+                ((UserControlDebtors)_userControl).Refresh();
+            }
+            else
+            {
+                ((UserControlClientList)_userControl).Refresh();
+            }
         }
     }
 }

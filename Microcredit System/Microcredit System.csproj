@@ -93,6 +93,7 @@
     </ApplicationDefinition>
     <Compile Include="ControlSystem\ControlSystem.cs" />
     <Compile Include="ControlSystem\DatabaseStuff\Database.cs" />
+    <Compile Include="ControlSystem\Funds\DebtIncreaser.cs" />
     <Compile Include="ControlSystem\Persons\ClientStuff\Client.cs" />
     <Compile Include="ControlSystem\Persons\EmployeeStuff\Admin.cs" />
     <Compile Include="ControlSystem\Persons\EmployeeStuff\Employee.cs" />
@@ -102,6 +103,9 @@
     </Compile>
     <Compile Include="Windows\UserControls\UserControlAddClient.xaml.cs">
       <DependentUpon>UserControlAddClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserControls\UserControlClientList.xaml.cs">
+      <DependentUpon>UserControlClientList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControls\UserControlCurrentBalance.xaml.cs">
       <DependentUpon>UserControlCurrentBalance.xaml</DependentUpon>
@@ -131,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserControls\UserControlAddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControls\UserControlClientList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

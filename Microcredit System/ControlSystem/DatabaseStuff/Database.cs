@@ -59,6 +59,22 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return ans;
         }
 
+        internal List<Client> GetClients()
+        {
+            List<Client> ans = new List<Client>();
+
+            MySqlCommand command = new MySqlCommand("select * from client;", connection);
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                ans.Add(new Client(dataReader));
+            }
+            dataReader.Close();
+
+            return ans;
+        }
+
         private string _connectionString;
 
         private Database()

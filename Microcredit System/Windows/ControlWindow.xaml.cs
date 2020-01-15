@@ -31,7 +31,7 @@ namespace Microcredit_System.Windows
             InitializeComponent();
 
             var _menuClient = new List<SubItem>();
-            _menuClient.Add(new SubItem("Client List"));
+            _menuClient.Add(new SubItem("Client List", new UserControlClientList()));
             _menuClient.Add(new SubItem("Add new Client", new UserControlAddClient(control)));
             _menuClient.Add(new SubItem("Debtors", new UserControlDebtors()));
 
@@ -59,6 +59,15 @@ namespace Microcredit_System.Windows
         internal void SwitchScreen(object sender)
         {
             var screen = ((UserControl)sender);
+
+            if(sender is UserControlClientList)
+            {
+                ((UserControlClientList)sender).Refresh();
+            }
+            else if(sender is UserControlDebtors)
+            {
+                ((UserControlDebtors)sender).Refresh();
+            }
 
             if (screen != null)
             {
