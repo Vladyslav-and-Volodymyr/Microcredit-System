@@ -1,0 +1,10 @@
+﻿{
+"login": "root",
+  
+"password": "Qwertypepsi7",
+  
+"server": "localhost"
+  
+"database": "microcredit"
+
+}
