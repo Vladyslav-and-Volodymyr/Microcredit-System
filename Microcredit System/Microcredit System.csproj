@@ -196,9 +196,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ControlSystem\DatabaseStuff\config.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\CreditExpress.png" />
     <Resource Include="Images\CreditExpressIcon.png" />
   </ItemGroup>

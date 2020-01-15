@@ -89,11 +89,13 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("Cannot connect to server. Contact administrator");
+                        Application.Current.Shutdown();
                         break;
 
                     case 1045:
                         MessageBox.Show("Invalid username/password, please try again");
+                        Application.Current.Shutdown();
                         break;
                 }
                 return false;
@@ -108,7 +110,7 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             [DataMember]
             private string database;
             [DataMember]
-            private string username;
+            private string login;
             [DataMember]
             private string password;
 
@@ -118,7 +120,7 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
 
             public string Server { get => server; set => server = value; }
             public string Database { get => database; set => database = value; }
-            public string Username { get => username; set => username = value; }
+            public string Username { get => login; set => login = value; }
             public string Password { get => password; set => password = value; }
             internal static DatabaseInfo Info { get => _databaseInfo; set => _databaseInfo = value; }
         }
