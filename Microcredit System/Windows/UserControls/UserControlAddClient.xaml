@@ -37,7 +37,7 @@
                         </Grid>
                         <TextBlock Text="ADD CLIENT " HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="20" VerticalAlignment="Top" Foreground="Gray" FontSize="30" />
                         <StackPanel>
-                            <Grid Margin="250 0 250 0">
+                            <Grid Margin="75 0 75 0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50"/>
                                     <RowDefinition Height="50"/>
@@ -57,12 +57,12 @@
                                 <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="SURNAME: " FontFamily="Champagne &amp; Limosines" Foreground="Gray" FontSize="25"/>
                                 <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="PASSPORT: " FontFamily="Champagne &amp; Limosines" Foreground="Gray" FontSize="25"/>
 
-                                <TextBox Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="Gray" Margin="0 0 0 10" Name="txtName" />
-                                <TextBox Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="Gray" Margin="0 0 0 10" Name="txtSurname"/>
-                                <TextBox Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="Gray" Margin="0 0 0 10" Name="txtPassport"/>
+                                <TextBox TabIndex="0" Grid.Row="2" Grid.Column="1"  VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="Gray" Margin="0 0 0 10" Name="txtName" />
+                                <TextBox TabIndex="1" Grid.Row="3" Grid.Column="1"  VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="Gray" Margin="0 0 0 10" Name="txtSurname"/>
+                                <TextBox TabIndex="2" Grid.Row="4" Grid.Column="1"  VerticalAlignment="Center" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="Gray" Margin="0 0 0 10" Name="txtPassport"/>
 
-                                <Button Grid.Row="5" HorizontalAlignment="Center" Margin="375 0 0 0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="150" Content="SAVE" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="White" Background="#FF5C5CC5" Click="Button_Click_Save"/>
-                                <Button Grid.Row="5" HorizontalAlignment="Center" Margin="0 0 375 0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="150" Content="CLEAR" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="White" Background="#FF5C5CC5" Click="Button_Click_Clear"/>
+                                <Button TabIndex="4" Grid.Row="5" HorizontalAlignment="Center" Margin="300 0 0 0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="150" Content="SAVE" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="White" Background="#FF5C5CC5" Click="Button_Click_Save"/>
+                                <Button TabIndex="3" Grid.Row="5" HorizontalAlignment="Center" Margin="0 0 300 0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="150" Content="CLEAR" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="White" Background="#FF5C5CC5" Click="Button_Click_Clear"/>
                                 
                             </Grid>
 
