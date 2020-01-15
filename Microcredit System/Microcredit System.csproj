@@ -97,6 +97,9 @@
     <Compile Include="ControlSystem\Persons\EmployeeStuff\Admin.cs" />
     <Compile Include="ControlSystem\Persons\EmployeeStuff\Employee.cs" />
     <Compile Include="ControlSystem\Persons\IPerson.cs" />
+    <Compile Include="Windows\ChangeDebtWindow.xaml.cs">
+      <DependentUpon>ChangeDebtWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControls\UserControlAddClient.xaml.cs">
       <DependentUpon>UserControlAddClient.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,9 @@
     </Compile>
     <Compile Include="Windows\UserControls\UserControlCustomer.xaml.cs">
       <DependentUpon>UserControlCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserControls\UserControlDebtors.xaml.cs">
+      <DependentUpon>UserControlDebtors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControls\UserControlExchanges.xaml.cs">
       <DependentUpon>UserControlExchanges.xaml</DependentUpon>
@@ -120,6 +126,10 @@
     </Compile>
     <Compile Include="Windows\ViewModel\ItemMenu.cs" />
     <Compile Include="Windows\ViewModel\SubItem.cs" />
+    <Page Include="Windows\ChangeDebtWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\UserControls\UserControlAddClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserControls\UserControlCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControls\UserControlDebtors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

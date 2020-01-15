@@ -18,7 +18,7 @@ namespace Microcredit_System.ControlSystem
 
         internal void AddClientToBase(string name, string surname, string passport)
         {
-            Database.DB.AddClientToBase(new Client(name, surname, passport));
+            Database.DB.AddClientToBase(new Client(name, surname, passport, 0));
         }
     }
 }

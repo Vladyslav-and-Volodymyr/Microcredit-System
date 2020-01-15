@@ -24,7 +24,8 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
         {
            
             MySqlCommand command = new MySqlCommand("select * from employee where login=\"" + login + 
-                                                                            "\" and password=\"" + password + "\"", connection);
+                                                                            "\" and password=\"" + password + "\"", 
+                                                                            connection);
             MySqlDataReader dataReader = command.ExecuteReader();
 
             if (dataReader.Read())
@@ -40,6 +41,22 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             }
             dataReader.Close();
             return null;
+        }
+
+        internal List<Client> GetDebtors()
+        {
+            List<Client> ans = new List<Client>();
+
+            MySqlCommand command = new MySqlCommand("select * from client where debt > 0;", connection);
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            while(dataReader.Read())
+            {
+                ans.Add(new Client(dataReader));
+            }
+            dataReader.Close();
+
+            return ans;
         }
 
         private string _connectionString;
@@ -126,6 +143,15 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
         }
 
         internal static Database DB { get => _database; }
+
+        internal void ChangeDebt(Client client, float delta)
+        {
+            client.Debt += delta;
+            MySqlCommand command = new MySqlCommand("UPDATE client " +
+                "SET debt = " + client.Debt + " WHERE passport = '" + client.Passport + "';", connection);
+
+            command.ExecuteScalar();
+        }
 
         internal void AddClientToBase(Client client)
         {

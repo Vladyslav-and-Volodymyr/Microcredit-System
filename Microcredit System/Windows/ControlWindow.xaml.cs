@@ -33,7 +33,7 @@ namespace Microcredit_System.Windows
             var _menuClient = new List<SubItem>();
             _menuClient.Add(new SubItem("Client List"));
             _menuClient.Add(new SubItem("Add new Client", new UserControlAddClient(control)));
-            _menuClient.Add(new SubItem("Debtors"));
+            _menuClient.Add(new SubItem("Debtors", new UserControlDebtors()));
 
             var _itemClient = new ItemMenu("Clients", _menuClient, PackIconKind.Person);
 
