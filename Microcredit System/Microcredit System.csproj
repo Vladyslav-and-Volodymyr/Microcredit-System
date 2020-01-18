@@ -50,6 +50,9 @@
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net451\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.2.1\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -101,6 +104,12 @@
     <Compile Include="Windows\ChangeDebtWindow.xaml.cs">
       <DependentUpon>ChangeDebtWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ChangeEmployeeWindow.xaml.cs">
+      <DependentUpon>ChangeEmployeeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserControls\UserContolAddEmployee.xaml.cs">
+      <DependentUpon>UserContolAddEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\UserControls\UserControlAddClient.xaml.cs">
       <DependentUpon>UserControlAddClient.xaml</DependentUpon>
     </Compile>
@@ -115,6 +124,9 @@
     </Compile>
     <Compile Include="Windows\UserControls\UserControlDebtors.xaml.cs">
       <DependentUpon>UserControlDebtors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UserControls\UserControlEmployeeList.xaml.cs">
+      <DependentUpon>UserControlEmployeeList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControls\UserControlExchanges.xaml.cs">
       <DependentUpon>UserControlExchanges.xaml</DependentUpon>
@@ -131,6 +143,14 @@
     <Compile Include="Windows\ViewModel\ItemMenu.cs" />
     <Compile Include="Windows\ViewModel\SubItem.cs" />
     <Page Include="Windows\ChangeDebtWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChangeEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControls\UserContolAddEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserControls\UserControlDebtors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserControls\UserControlEmployeeList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

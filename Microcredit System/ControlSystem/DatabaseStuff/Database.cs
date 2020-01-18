@@ -32,15 +32,33 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             {
                 if (((byte[])dataReader["is_admin"])[0].Equals(49))
                 {
-                    return new Admin(dataReader);
+                    var admin = new Admin(dataReader);
+                    dataReader.Close();
+                    return admin;
                 }
                 else
                 {
-                    return new Employee(dataReader);
+                    var employee = new Employee(dataReader);
+                    dataReader.Close();
+                    return employee;
                 }
             }
             dataReader.Close();
             return null;
+        }
+
+        internal void AddEmployeeToBase(Employee employee, bool isAdmin)
+        {
+            string query = string.Format("insert into employee(name, surname, pesel, login, password, is_admin) " +
+                                         "values('{0}', '{1}', '{2}', '{3}', '{4}', {5});", 
+                                        new string[] { employee.Name,
+                                                       employee.Surname,
+                                                       employee.Pesel,
+                                                       employee.Login,
+                                                       employee.Password,
+                                                       isAdmin.ToString() });
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteScalar();
         }
 
         internal List<Client> GetDebtors()
@@ -53,6 +71,29 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             while(dataReader.Read())
             {
                 ans.Add(new Client(dataReader));
+            }
+            dataReader.Close();
+
+            return ans;
+        }
+
+        internal List<Employee> GetEmployees()
+        {
+            List<Employee> ans = new List<Employee>();
+
+            MySqlCommand command = new MySqlCommand("select * from employee;", connection);
+            MySqlDataReader dataReader = command.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                if (((byte[])dataReader["is_admin"])[0].Equals(49))
+                {
+                    ans.Add(new Admin(dataReader));
+                }
+                else
+                {
+                    ans.Add(new Employee(dataReader));
+                }
             }
             dataReader.Close();
 

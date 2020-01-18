@@ -30,6 +30,8 @@ namespace Microcredit_System.Windows
         {
             InitializeComponent();
 
+            this.employee = employee;
+
             var _menuClient = new List<SubItem>();
             _menuClient.Add(new SubItem("Client List", new UserControlClientList()));
             _menuClient.Add(new SubItem("Add new Client", new UserControlAddClient(control)));
@@ -39,21 +41,29 @@ namespace Microcredit_System.Windows
 
             //
 
-            var _menuFinances = new List<SubItem>();
-            _menuFinances.Add(new SubItem("Current balance", new UserControlCurrentBalance()));
-            _menuFinances.Add(new SubItem("Exchange", new UserControlExchanges()));
-            _menuFinances.Add(new SubItem("Give credit", new UserControlGiveCredit()));
-            _menuFinances.Add(new SubItem("Debt recovery"));
-            
+            var _menuFinances = new List<SubItem>
+            {
+                new SubItem("Current balance", new UserControlCurrentBalance()),
+                new SubItem("Exchange", new UserControlExchanges()),
+                new SubItem("Give credit", new UserControlGiveCredit()),
+                new SubItem("Debt recovery")
+            };
+
             var _itemFinances = new ItemMenu("Finances", _menuFinances, PackIconKind.ScaleBalance);
-
-            /// var dash = new List<SubItem>(); 
-            /// var item0 = new ItemMenu("Dashboard", new List<SubItem>(), PackIconKind.ViewDashboard);
-
-            // Menu.Children.Add(new UserControlMenuItem(item0));
 
             Menu.Children.Add(new UserControlMenuItem(_itemClient, this));
             Menu.Children.Add(new UserControlMenuItem(_itemFinances, this));
+
+            if (employee is Admin)
+            {
+                var _menuEmployee = new List<SubItem>
+                {
+                    new SubItem("Add Employee", new UserContolAddEmployee()),
+                    new SubItem("Change Employee", new UserControlEmployeeList())
+                };
+                var _itemEmployee = new ItemMenu("Employee", _menuEmployee, PackIconKind.Person);
+                Menu.Children.Add(new UserControlMenuItem(_itemEmployee, this));
+            }
         }
 
         internal void SwitchScreen(object sender)
@@ -80,7 +90,12 @@ namespace Microcredit_System.Windows
         private void Button_LogOut_Click(object sender, RoutedEventArgs e)
         {
             new MainWindow().Show();
-            this.Close();
+            Close();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            new MainWindow().Show();
         }
     }
 }

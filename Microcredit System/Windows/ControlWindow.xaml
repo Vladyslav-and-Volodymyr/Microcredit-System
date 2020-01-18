@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Microcredit_System.Windows"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Microcredit System Control" Height="900" Width="1800" WindowState="Maximized" MinHeight="720" MinWidth="1080" Icon="/Microcredit System;component/images/CreditExpressIcon.png">
+        Title="Microcredit System Control" Height="900" Width="1800" WindowState="Maximized" MinHeight="720" MinWidth="1080" Icon="/Microcredit System;component/images/CreditExpressIcon.png"
+        Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height ="60" />

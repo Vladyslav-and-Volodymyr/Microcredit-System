@@ -9,20 +9,6 @@ namespace Microcredit_System.ControlSystem.Persons.EmployeeStuff
 {
     class Employee : IPerson
     {
-        /*public void printReceipt(Debt debt)
-        {
-        }
-
-        public bool BorrowMoney(Client client, double amount)
-        {
-            // TODO: implement
-            return false;
-        }
-
-        public void ReturnMoney(Client client, double amount)
-        {
-            // TODO: implement
-        }*/
 
         private string _name;
         private string _surname;
@@ -47,8 +33,16 @@ namespace Microcredit_System.ControlSystem.Persons.EmployeeStuff
             // _passport = (string) dataReader["id"];
             _login = (string) dataReader["login"];
             _password = (string)dataReader["password"];
-            dataReader.Close();
             // _password = (string) dataReader["password"];
+        }
+
+        public Employee(string name, string surname, string pesel, string login, string password)
+        {
+            _name = name;
+            _surname = surname;
+            _pesel = pesel;
+            _login = login;
+            _password = password;
         }
     }
 }

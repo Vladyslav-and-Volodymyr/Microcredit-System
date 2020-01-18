@@ -23,11 +23,13 @@ namespace Microcredit_System
     /// </summary>
     public partial class MainWindow : Window
     {
+
         ControlSystem.ControlSystem control = new ControlSystem.ControlSystem();
 
         public MainWindow()
         {
             InitializeComponent();
+
             Database.DB.Init();
         }
 

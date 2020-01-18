@@ -82,5 +82,10 @@ namespace Microcredit_System.Windows
                 ((UserControlClientList)_userControl).Refresh();
             }
         }
+
+        private void ButtonBan_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
