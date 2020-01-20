@@ -39,20 +39,21 @@ namespace Microcredit_System.Windows
 
             var _itemClient = new ItemMenu("Clients", _menuClient, PackIconKind.Person);
 
-            //
+            
 
             var _menuFinances = new List<SubItem>
             {
                 new SubItem("Current balance", new UserControlCurrentBalance()),
                 new SubItem("Exchange", new UserControlExchanges()),
-                new SubItem("Give credit", new UserControlGiveCredit()),
-                new SubItem("Debt recovery")
+               
             };
 
             var _itemFinances = new ItemMenu("Finances", _menuFinances, PackIconKind.ScaleBalance);
 
             Menu.Children.Add(new UserControlMenuItem(_itemClient, this));
             Menu.Children.Add(new UserControlMenuItem(_itemFinances, this));
+
+            
 
             if (employee is Admin)
             {
@@ -70,7 +71,12 @@ namespace Microcredit_System.Windows
         {
             var screen = ((UserControl)sender);
 
-            if(sender is UserControlClientList)
+            if(sender is IRefreshable)
+            {
+                ((IRefreshable)sender).Refresh();
+            }
+
+            /*if(sender is UserControlClientList)
             {
                 ((UserControlClientList)sender).Refresh();
             }
@@ -78,7 +84,11 @@ namespace Microcredit_System.Windows
             {
                 ((UserControlDebtors)sender).Refresh();
             }
-
+            else if(sender is UserControlEmployeeList)
+            {
+                ((UserControlEmployeeList)sender).Refresh();
+            }
+            */
             if (screen != null)
             {
                 StackPanelMain.Children.Clear();
@@ -89,7 +99,6 @@ namespace Microcredit_System.Windows
 
         private void Button_LogOut_Click(object sender, RoutedEventArgs e)
         {
-            new MainWindow().Show();
             Close();
         }
 

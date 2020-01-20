@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microcredit_System.ControlSystem.Persons.EmployeeStuff;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace Microcredit_System.Windows
     /// </summary>
     public partial class ChangeEmployeeWindow : Window
     {
-        public ChangeEmployeeWindow()
+        internal ChangeEmployeeWindow(Employee employee)
         {
             InitializeComponent();
+
+            txtAdmin.Text = (employee is Admin).ToString();
+
+            txtLogin.Text = employee.Login;
+            txtName.Text = employee.Name;
+            txtSurname.Text = employee.Surname;
+            txtPesel.Text = employee.Pesel;
+            txtPassword.Text = employee.Password;
         }
     }
 }

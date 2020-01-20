@@ -20,7 +20,7 @@ namespace Microcredit_System.Windows.UserControls
     /// <summary>
     /// Interaction logic for UserControlEmployeeList.xaml
     /// </summary>
-    public partial class UserControlEmployeeList : UserControl
+    public partial class UserControlEmployeeList : UserControl, IRefreshable
     {
 
         List<Employee> items;
@@ -33,7 +33,7 @@ namespace Microcredit_System.Windows.UserControls
             Refresh();
         }
 
-        private void Refresh()
+        public void Refresh()
         {
             items = Database.DB.GetEmployees();
             ListOfEmployees.ItemsSource = items;
@@ -41,7 +41,7 @@ namespace Microcredit_System.Windows.UserControls
 
         private void ListOfEmployees_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            throw new NotImplementedException();
+            new ChangeEmployeeWindow(items[ListOfEmployees.SelectedIndex]).Show();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microcredit_System.ControlSystem.Funds;
 using Microcredit_System.ControlSystem.Persons.ClientStuff;
 using Microcredit_System.ControlSystem.Persons.EmployeeStuff;
 using MySql.Data.MySqlClient;
@@ -77,6 +78,12 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return ans;
         }
 
+        public void ExecuteQuery(string query)
+        {
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteScalar();
+        }
+
         internal List<Employee> GetEmployees()
         {
             List<Employee> ans = new List<Employee>();
@@ -98,6 +105,20 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             dataReader.Close();
 
             return ans;
+        }
+
+        public Balance GetBalance()
+        {
+            string query = "select * from balance";
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+            var reader = command.ExecuteReader();
+
+            reader.Read();
+
+            Balance.Instance.Init(reader);
+
+            return Balance.Instance;
         }
 
         internal List<Client> GetClients()
@@ -208,6 +229,8 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
                 "SET debt = " + client.Debt + " WHERE passport = '" + client.Passport + "';", connection);
 
             command.ExecuteScalar();
+
+            Balance.Instance.AddDeltaToPln(-delta);
         }
 
         internal void AddClientToBase(Client client)

@@ -37,7 +37,7 @@
                         <TextBlock Text="US DOLLAR BALLANCE" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-                            <TextBlock Text="10000" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                            <TextBlock Name="txtUsd" Text="10000" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
                             <TextBlock Text=" $ " HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
 
                         </StackPanel>
@@ -60,7 +60,7 @@
                         <TextBlock Text="EURO BALLANCE" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-                            <TextBlock Text="10000" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                            <TextBlock Name="txtEur" Text="10000" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
                             <TextBlock Text=" € " HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
 
                         </StackPanel>
@@ -83,7 +83,7 @@
                         <TextBlock Text="PLN BALLANCE" HorizontalAlignment="Right" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Top" Foreground="Gray"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-                            <TextBlock Text="10000" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
+                            <TextBlock Name="txtPln" Text="0000" HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
                             <TextBlock Text=" ZŁ " HorizontalAlignment="Center" FontFamily="Champagne &amp; Limosines" Margin="5" VerticalAlignment="Center" Foreground="Gray" FontSize="30"/>
 
                         </StackPanel>
@@ -91,32 +91,11 @@
                 </Grid>
 
                 <Grid Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
-                    <Grid Background="#FFE0DADA" Margin="20 50 20 20">
-                        <Grid.OpacityMask>
-                            <VisualBrush Visual="{Binding ElementName=BorderG1 }"/>
-                        </Grid.OpacityMask>
-                        <Border x:Name="BorderG1" CornerRadius="5" Background="#FFD1DEEA"/>
-                        <StackPanel VerticalAlignment="Bottom">
-                            <TextBlock Text=" CreditExpress® " HorizontalAlignment="Right" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="30"/>
-                        </StackPanel>
-                    </Grid>
                     <Grid Margin="50 20 50 80">
                         <Grid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=BorderG2 }"/>
                         </Grid.OpacityMask>
-                        <Border x:Name="BorderG2" CornerRadius="15" Background="#FFADC8E0"/>
-                        <Border Background="#FFADC8E0"/>
-                        <StackPanel VerticalAlignment="Top">
-                            <TextBlock Text=" Last Transactions " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="30"/>
 
-                            <TextBlock Text=" Credit 1500 PLN 19.12.2019 9:45 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text=" Recovery 500 PLN 19.12.2019 11:30 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text=" Credit 200 PLN 19.12.2019 12:03 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text=" Credit 1000 PLN 19.12.2019 13:12 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <!-- IS IT POSSIBLE TO EXTRACT TRANSACTIONS HISTORY E.G LAST 5-10 TRANSACTIONS ? -->
-
-
-                        </StackPanel>
 
                     </Grid>
 

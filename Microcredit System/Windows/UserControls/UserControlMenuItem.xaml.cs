@@ -36,7 +36,12 @@ namespace Microcredit_System.Windows.UserControls
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(ListView.SelectedIndex == -1)
+            {
+                return;
+            }
             _context.SwitchScreen(((SubItem)((ListView)sender).SelectedItem).Screen);
+            ListView.SelectedIndex = -1;
         }
     }
 }

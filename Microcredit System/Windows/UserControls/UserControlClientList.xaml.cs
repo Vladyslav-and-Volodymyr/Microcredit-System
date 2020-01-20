@@ -20,7 +20,7 @@ namespace Microcredit_System.Windows.UserControls
     /// <summary>
     /// Interaction logic for UserControlClientList.xaml
     /// </summary>
-    public partial class UserControlClientList : UserControl
+    public partial class UserControlClientList : UserControl, IRefreshable
     {
 
         List<Client> items;

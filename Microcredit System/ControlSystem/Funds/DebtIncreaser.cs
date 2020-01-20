@@ -15,6 +15,7 @@ namespace Microcredit_System.ControlSystem.Funds
         {
             Thread thread = new Thread(new ThreadStart(Run));
             thread.Priority = ThreadPriority.Lowest;
+            thread.Start();
         }
 
         private void Run()

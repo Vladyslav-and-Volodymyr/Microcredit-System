@@ -96,6 +96,7 @@
     </ApplicationDefinition>
     <Compile Include="ControlSystem\ControlSystem.cs" />
     <Compile Include="ControlSystem\DatabaseStuff\Database.cs" />
+    <Compile Include="ControlSystem\Funds\Balance.cs" />
     <Compile Include="ControlSystem\Funds\DebtIncreaser.cs" />
     <Compile Include="ControlSystem\Persons\ClientStuff\Client.cs" />
     <Compile Include="ControlSystem\Persons\EmployeeStuff\Admin.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Windows\ChangeEmployeeWindow.xaml.cs">
       <DependentUpon>ChangeEmployeeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UserControls\Refreshable.cs" />
     <Compile Include="Windows\UserControls\UserContolAddEmployee.xaml.cs">
       <DependentUpon>UserContolAddEmployee.xaml</DependentUpon>
     </Compile>
@@ -130,9 +132,6 @@
     </Compile>
     <Compile Include="Windows\UserControls\UserControlExchanges.xaml.cs">
       <DependentUpon>UserControlExchanges.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\UserControls\UserControlGiveCredit.xaml.cs">
-      <DependentUpon>UserControlGiveCredit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\UserControls\UserControlMenuItem.xaml.cs">
       <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
@@ -179,10 +178,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserControls\UserControlExchanges.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\UserControls\UserControlGiveCredit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

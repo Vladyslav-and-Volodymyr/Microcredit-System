@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microcredit_System.ControlSystem.DatabaseStuff;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,20 @@ namespace Microcredit_System.Windows.UserControls
     /// <summary>
     /// Interaction logic for UserControlCurrentBalance.xaml
     /// </summary>
-    public partial class UserControlCurrentBalance : UserControl
+    public partial class UserControlCurrentBalance : UserControl, IRefreshable
     {
         public UserControlCurrentBalance()
         {
             InitializeComponent();
+        }
+
+        public void Refresh()
+        {
+            var balance = Database.DB.GetBalance();
+
+            txtEur.Text = balance.Eur.ToString();
+            txtUsd.Text = balance.Usd.ToString();
+            txtPln.Text = balance.Pln.ToString();
         }
     }
 }
