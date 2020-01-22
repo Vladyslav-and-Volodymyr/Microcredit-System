@@ -1,4 +1,6 @@
-﻿using Microcredit_System.ControlSystem.Persons.EmployeeStuff;
+﻿using Microcredit_System.ControlSystem.DatabaseStuff;
+using Microcredit_System.ControlSystem.Persons.EmployeeStuff;
+using Microcredit_System.Windows.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,15 @@ namespace Microcredit_System.Windows
     /// </summary>
     public partial class ChangeEmployeeWindow : Window
     {
-        internal ChangeEmployeeWindow(Employee employee)
+        private Employee employee;
+        private UserControlEmployeeList userControl;
+
+        internal ChangeEmployeeWindow(Employee employee, UserControlEmployeeList userControl)
         {
             InitializeComponent();
+
+            this.employee = employee;
+            this.userControl = userControl;
 
             txtAdmin.Text = (employee is Admin).ToString();
 
@@ -31,6 +39,20 @@ namespace Microcredit_System.Windows
             txtSurname.Text = employee.Surname;
             txtPesel.Text = employee.Pesel;
             txtPassword.Text = employee.Password;
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            Database.DB.ExecuteQuery("update employee " +
+                                     "set password='" + txtPassword.Text + "' " +
+                                     "where login='" + txtLogin.Text + "';");
+        }
+
+        private void BtnFire_Click(object sender, RoutedEventArgs e)
+        {
+            Database.DB.DeleteEmployee(employee);
+            userControl.Refresh();
+            Close();
         }
     }
 }

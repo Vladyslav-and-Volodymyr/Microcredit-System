@@ -46,15 +46,15 @@
             <TextBlock Grid.Column="1" Grid.Row="2" FontSize="20"></TextBlock>
             <TextBlock Grid.Column="1" Grid.Row="3" FontSize="20"></TextBlock>
 
-            <TextBox Name="txtPassword" Grid.Row="4"   Grid.Column="2" Margin="0,0,0,0"></TextBox>
+            <TextBox Name="txtPassword" Grid.Row="4"   Grid.Column="2" Margin="0,0,0,0" Height="30"></TextBox>
             <TextBlock Name="txtName"  Grid.Row="0"   Grid.Column="2" Margin="0,0,0,0"></TextBlock>
             <TextBlock Name="txtSurname" Grid.Row="1"   Grid.Column="2" Margin="0,0,0,0"></TextBlock>
             <TextBlock Name="txtPesel" Grid.Row="2"   Grid.Column="2" Margin="0,0,0,0"></TextBlock>
             <TextBlock Name="txtLogin" Grid.Row="3"   Grid.Column="2" Margin="0,0,0,0"></TextBlock>
             <TextBlock Name="txtAdmin" Grid.Row="5"   Grid.Column="2" Margin="0,0,0,0"></TextBlock>
 
-            <Button Grid.Row="7" Grid.ColumnSpan="2" Margin="3">Save</Button>
-            <Button Grid.Row="8" Grid.ColumnSpan="2" Margin="3" Background="Red">Fire!</Button>
+            <Button Name="btnSave" Grid.Row="7" Grid.ColumnSpan="2" Margin="3" Click="BtnSave_Click">Save</Button>
+            <Button Name="btnFire" Grid.Row="8" Grid.ColumnSpan="2" Margin="3" Background="Red" Click="BtnFire_Click">Fire!</Button>
 
         </Grid>
     </Grid>

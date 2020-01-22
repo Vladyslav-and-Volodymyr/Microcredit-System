@@ -98,6 +98,16 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
         }
 
         /// <summary>
+        /// Deletes employee from database
+        /// </summary>
+        internal void DeleteEmployee(Employee employee)
+        {
+            string query = "delete from employee where login='" + employee.Login + "';";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteScalar();
+        }
+
+        /// <summary>
         /// Executes SQL-query
         /// </summary>
         public void ExecuteQuery(string query)

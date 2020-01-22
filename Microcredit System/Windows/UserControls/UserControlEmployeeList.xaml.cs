@@ -41,7 +41,7 @@ namespace Microcredit_System.Windows.UserControls
 
         private void ListOfEmployees_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            new ChangeEmployeeWindow(items[ListOfEmployees.SelectedIndex]).Show();
+            new ChangeEmployeeWindow(items[ListOfEmployees.SelectedIndex], this).Show();
         }
     }
 }

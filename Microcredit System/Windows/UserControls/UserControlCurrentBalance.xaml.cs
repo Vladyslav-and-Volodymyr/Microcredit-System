@@ -52,7 +52,7 @@ namespace Microcredit_System.Windows.UserControls
             {
                 var name = gridForPutting.GetValue(NameProperty).ToString();
                 gridParent.Children.Remove(gridForPutting);
-                NameScope.GetNameScope(this).UnregisterName(name);
+                // NameScope.GetNameScope(this).UnregisterName(name);
             }
         }
 
