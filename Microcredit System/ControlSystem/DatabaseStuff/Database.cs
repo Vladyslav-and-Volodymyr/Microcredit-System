@@ -78,6 +78,13 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return ans;
         }
 
+        internal void DeleteClient(Client client)
+        {
+            string query = "delete from client where passport='" + client.Passport + "';";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteScalar();
+        }
+
         public void ExecuteQuery(string query)
         {
             MySqlCommand command = new MySqlCommand(query, connection);

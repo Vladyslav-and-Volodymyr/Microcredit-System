@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Microcredit_System"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
                 d:DesignHeight="450" d:DesignWidth="800" MinHeight="450" MinWidth="800" FontSize="20">
     <Grid>
@@ -26,7 +27,18 @@
 
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+           
+            <TextBlock TextAlignment="Center" Text="Currency Converter"> </TextBlock>
+            
+        </Grid>
+        <Grid Grid.ColumnSpan="3" Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -37,36 +49,41 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            
             <DockPanel>
-                <TextBlock Text="Current balance" DockPanel.Dock="Top"/>
+                <TextBlock TextAlignment="Left" Margin="20 0 0 0" Text="Enter Amount: " Width="200"> </TextBlock>
+                <TextBlock TextAlignment="Center"></TextBlock>
             </DockPanel>
             <DockPanel Grid.Row="1">
-                <TextBlock Text="pln: "></TextBlock>
-                <TextBox Name="txtPln" IsReadOnly="True"  Margin="10,0,0,0"></TextBox>
+                <TextBox Name="txtAmount" TextAlignment="Left" Margin="20 0 0 0" Width="200" PreviewTextInput="TextBox_TextInput" TextChanged="TxtAmount_TextChanged"></TextBox>
+                <materialDesign:PackIcon Name="iconSwap" MouseDown="PackIcon_MouseDown" Kind="SwapHorizontalCircle" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Foreground="Blue"/>
             </DockPanel>
             <DockPanel Grid.Row="2">
-                <TextBlock Text="eur: "></TextBlock>
-                <TextBox Name="txtEur" IsReadOnly="True" Margin="10,0,0,0"></TextBox>
+                <TextBlock TextAlignment="Left" Margin="20 0 0 0" Text="Exchange Rate: " Width="200"></TextBlock>
+                <TextBlock Name="txtChoose" Text="Choose a Currency To" TextAlignment="Center"></TextBlock>
             </DockPanel>
             <DockPanel Grid.Row="3">
-                <TextBlock Text="usd: "></TextBlock>
-                <TextBox Name="txtUsd" IsReadOnly="True" Margin="10,0,0,0"></TextBox>
+                <TextBox Name="txtRate" IsReadOnly="True" TextAlignment="Left" Margin="20 0 0 0" Width="200"></TextBox>
+                <ComboBox Name="comboboxCurrency" Width="200" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20 0 0 0" SelectionChanged="ComboboxCurrency_SelectionChanged">
+                    <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
+                    <ComboBoxItem>EUR</ComboBoxItem>
+                </ComboBox>
             </DockPanel>
 
             <DockPanel Grid.Column="1">
-                <TextBlock Text="Exchange rates:" DockPanel.Dock="Top"/>
+                
             </DockPanel>
-            <DockPanel Grid.Row="1" Grid.Column="1">
-                <TextBlock Text="pln: "></TextBlock>
-                <TextBox Name="txtPlnRate" IsReadOnly="True"  Margin="10,0,0,0"></TextBox>
+            <DockPanel Width="300" Grid.Row="1" Grid.Column="1">
+                <Button HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" Name="btnSubmit" Click="BtnSubmit_Click"> Submit </Button>
             </DockPanel>
+            
             <DockPanel Grid.Row="2" Grid.Column="1">
-                <TextBlock Text="eur: "></TextBlock>
-                <TextBox Name="txtEurRate" IsReadOnly="True" Margin="10,0,0,0"></TextBox>
+                <TextBlock Name="txtCurrencyReceive" Text="You receive: (USD)" TextAlignment="Center"></TextBlock>
+                
             </DockPanel>
             <DockPanel Grid.Row="3" Grid.Column="1">
-                <TextBlock Text="usd: "></TextBlock>
-                <TextBox Name="txtUsdRate" IsReadOnly="True" Margin="10,0,0,0"></TextBox>
+                <TextBox Name="txtConvert" IsReadOnly="True" TextAlignment="Left" Margin="20 0 0 0" Width="200"  VerticalAlignment="Top"></TextBox>
+
             </DockPanel>
         </Grid>
 

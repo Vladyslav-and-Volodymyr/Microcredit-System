@@ -85,7 +85,9 @@ namespace Microcredit_System.Windows
 
         private void ButtonBan_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Database.DB.DeleteClient(_client);
+            RefreshParentControl();
+            Close();
         }
     }
 }

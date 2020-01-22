@@ -45,7 +45,7 @@
 
             </Grid>
 
-            <ScrollViewer HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <ScrollViewer HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Visible" Grid.Row="1">
                 <StackPanel x:Name="Menu" Margin="10"/>
             </ScrollViewer>
         </Grid>

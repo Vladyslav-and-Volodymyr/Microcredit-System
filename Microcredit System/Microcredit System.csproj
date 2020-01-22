@@ -97,6 +97,8 @@
     <Compile Include="ControlSystem\ControlSystem.cs" />
     <Compile Include="ControlSystem\DatabaseStuff\Database.cs" />
     <Compile Include="ControlSystem\Funds\Balance.cs" />
+    <Compile Include="ControlSystem\Funds\CurrencyStuff\CurrencyInformation.cs" />
+    <Compile Include="ControlSystem\Funds\CurrencyStuff\CurrencyRatesInformation.cs" />
     <Compile Include="ControlSystem\Funds\DebtIncreaser.cs" />
     <Compile Include="ControlSystem\Persons\ClientStuff\Client.cs" />
     <Compile Include="ControlSystem\Persons\EmployeeStuff\Admin.cs" />
@@ -135,9 +137,6 @@
     </Compile>
     <Compile Include="Windows\UserControls\UserControlMenuItem.xaml.cs">
       <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\UserControls\UserControlProviders.xaml.cs">
-      <DependentUpon>UserControlProviders.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ViewModel\ItemMenu.cs" />
     <Compile Include="Windows\ViewModel\SubItem.cs" />
@@ -182,10 +181,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UserControls\UserControlMenuItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\UserControls\UserControlProviders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

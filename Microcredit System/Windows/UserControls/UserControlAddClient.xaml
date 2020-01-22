@@ -63,50 +63,13 @@
 
                                 <Button TabIndex="4" Grid.Row="5" HorizontalAlignment="Center" Margin="300 0 0 0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="150" Content="SAVE" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="White" Background="#FF5C5CC5" Click="Button_Click_Save"/>
                                 <Button TabIndex="3" Grid.Row="5" HorizontalAlignment="Center" Margin="0 0 300 0"  Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" Width="150" Content="CLEAR" FontSize="20" FontFamily="Champagne &amp; Limosines" Foreground="White" Background="#FF5C5CC5" Click="Button_Click_Clear"/>
-                                
+
                             </Grid>
 
 
 
                         </StackPanel>
                     </Grid>
-                </Grid>
-
-                <Grid Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
-                    <Grid Background="#FFE0DADA" Margin="20 50 20 20">
-                        <Grid.OpacityMask>
-                            <VisualBrush Visual="{Binding ElementName=BorderG1 }"/>
-                        </Grid.OpacityMask>
-                        <Border x:Name="BorderG1" CornerRadius="5" Background="#FFD1DEEA"/>
-                        <StackPanel VerticalAlignment="Bottom">
-                            <TextBlock Text=" CreditExpress® " HorizontalAlignment="Right" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="30"/>
-                        </StackPanel>
-                    </Grid>
-                    <Grid Margin="50 20 50 80">
-                        <Grid.OpacityMask>
-                            <VisualBrush Visual="{Binding ElementName=BorderG2 }"/>
-                        </Grid.OpacityMask>
-                        <Border x:Name="BorderG2" CornerRadius="15" Background="#FFADC8E0"/>
-                        <Border Background="#FFADC8E0"/>
-                        <StackPanel VerticalAlignment="Top">
-                            <TextBlock Text=" New Clients " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="30"/>
-
-                            <TextBlock Text=" Vladik Vladik 19.12.2019 9:45 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text=" Zopa Zopka 19.12.2019 11:30 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text=" Petya Porox 19.12.2019 12:03 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <TextBlock Text=" Vor Kakashek 19.12.2019 13:12 " HorizontalAlignment="Left" FontFamily="Champagne &amp; Limosines" Margin="5" Foreground="Gray" FontSize="15"/>
-                            <!-- IS IT POSSIBLE TO EXTRACT TRANSACTIONS HISTORY E.G LAST 5-10 TRANSACTIONS ? -->
-
-
-                        </StackPanel>
-
-                    </Grid>
-
-
-                </Grid>
-
-                <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
-
                 </Grid>
 
             </Grid>

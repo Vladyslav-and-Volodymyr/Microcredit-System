@@ -39,13 +39,10 @@ namespace Microcredit_System.Windows
 
             var _itemClient = new ItemMenu("Clients", _menuClient, PackIconKind.Person);
 
-            
-
             var _menuFinances = new List<SubItem>
             {
-                new SubItem("Current balance", new UserControlCurrentBalance()),
+                new SubItem("Current balance", new UserControlCurrentBalance(employee)),
                 new SubItem("Exchange", new UserControlExchanges()),
-               
             };
 
             var _itemFinances = new ItemMenu("Finances", _menuFinances, PackIconKind.ScaleBalance);
@@ -53,7 +50,6 @@ namespace Microcredit_System.Windows
             Menu.Children.Add(new UserControlMenuItem(_itemClient, this));
             Menu.Children.Add(new UserControlMenuItem(_itemFinances, this));
 
-            
 
             if (employee is Admin)
             {
