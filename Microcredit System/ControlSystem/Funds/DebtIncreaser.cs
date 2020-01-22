@@ -11,6 +11,9 @@ namespace Microcredit_System.ControlSystem.Funds
     {
         private bool _middleOfTheDay = true;
 
+        /// <summary>
+        /// Starts thread which will increase debts
+        /// </summary>
         public void Start()
         {
             Thread thread = new Thread(new ThreadStart(Run));
@@ -42,7 +45,7 @@ namespace Microcredit_System.ControlSystem.Funds
 
         private void IncreaseDebts()
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }

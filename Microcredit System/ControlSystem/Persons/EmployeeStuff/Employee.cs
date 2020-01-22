@@ -18,13 +18,25 @@ namespace Microcredit_System.ControlSystem.Persons.EmployeeStuff
         private string _login;
         private string _password;
 
+        /// <summary>
+        /// Current employee's login
+        /// </summary>
         public string Login { get => _login; }
+        /// <summary>
+        /// Current employee's password
+        /// </summary>
         public string Password { get => _password; }
         public string Surname { get => _surname; }
+        /// <summary>
+        /// Current employee's PESEL
+        /// </summary>
         public string Pesel { get => _pesel; }
         // public string Passport { get => _passport; }
         public string Name { get => _name; }
 
+        /// <summary>
+        /// Inits Employee from MySqlDataReader
+        /// </summary>
         internal Employee(MySqlDataReader dataReader)
         {
             _name = (string) dataReader["name"];
@@ -36,6 +48,9 @@ namespace Microcredit_System.ControlSystem.Persons.EmployeeStuff
             // _password = (string) dataReader["password"];
         }
 
+        /// <summary>
+        /// Inits Employee from variables
+        /// </summary>
         public Employee(string name, string surname, string pesel, string login, string password)
         {
             _name = name;

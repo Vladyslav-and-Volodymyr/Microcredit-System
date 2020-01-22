@@ -19,11 +19,23 @@ namespace Microcredit_System.ControlSystem.Funds
         private double _usd;
         private double _eur;
 
+        /// <summary>
+        /// Current balance of pln
+        /// </summary>
         public double Pln { get => _pln; }
+        /// <summary>
+        /// Current balance of usd
+        /// </summary>
         public double Usd { get => _usd; }
+        /// <summary>
+        /// Current balance of eur
+        /// </summary>
         public double Eur { get => _eur; }
         internal static Balance Instance { get => instance; set => instance = value; }
 
+        /// <summary>
+        /// Initialization from doubles
+        /// </summary>
         public void Init(double pln, double usd, double eur)
         {
             _pln = pln;
@@ -31,17 +43,26 @@ namespace Microcredit_System.ControlSystem.Funds
             _eur = eur;
         }
 
+        /// <summary>
+        /// Initialization from SqlReader
+        /// </summary>
         public void Init(MySqlDataReader reader)
         {
             Init(reader.GetDouble(2), reader.GetDouble(1), reader.GetDouble(0));
             reader.Close();
         }
 
+        /// <summary>
+        /// Initialization from Database
+        /// </summary>
         void Init()
         {
             Database.DB.GetBalance();
         }
 
+        /// <summary>
+        /// Adds delta to Usd in Database
+        /// </summary>
         public void AddDeltaToUsd(double delta)
         {
             Init();
@@ -51,6 +72,9 @@ namespace Microcredit_System.ControlSystem.Funds
                                      "set usd=" + _usd);
         }
 
+        /// <summary>
+        /// Adds delta to Pln in Database
+        /// </summary>
         public void AddDeltaToPln(double delta)
         {
             Init();
@@ -60,6 +84,9 @@ namespace Microcredit_System.ControlSystem.Funds
                                      "set pln=" + _pln);
         }
 
+        /// <summary>
+        /// Adds delta to Eur in Database
+        /// </summary>
         public void AddDeltaToEur(double delta)
         {
             Init();

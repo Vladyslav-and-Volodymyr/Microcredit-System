@@ -8,25 +8,21 @@ namespace Microcredit_System.ControlSystem.Persons
 {
     interface IPerson
     {
+        /// <summary>
+        /// Person's name
+        /// </summary>
         String Name
         {
             get;
         }
 
+        /// <summary>
+        /// Person's surname
+        /// </summary>
         String Surname
         {
             get;
         }
-
-        /*String Pesel
-        {
-            get;
-        }*/
-
-        /*String Passport
-        {
-            get;
-        }*/
     }
 
 }

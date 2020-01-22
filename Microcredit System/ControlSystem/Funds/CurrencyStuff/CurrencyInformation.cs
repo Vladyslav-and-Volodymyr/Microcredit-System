@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace Microcredit_System.ControlSystem.Funds.CurrencyStuff
 {
     /// <summary>
-    /// Information about currency according to Narodowy Bank Polski
+    /// Information about currency according to Narodowy Bank Polski. 
+    /// This is additional class for CurrencyRatesInformation. Do not change it or use it
     /// </summary>
     [DataContract]
     public class CurrencyInformation

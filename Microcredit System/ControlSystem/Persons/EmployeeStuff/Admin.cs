@@ -9,6 +9,9 @@ namespace Microcredit_System.ControlSystem.Persons.EmployeeStuff
 {
     class Admin : Employee
     {
+        /// <summary>
+        /// Inits Admin from SqlDataReader
+        /// </summary>
         internal Admin(MySqlDataReader dataReader) : base(dataReader) { }
     }
 }

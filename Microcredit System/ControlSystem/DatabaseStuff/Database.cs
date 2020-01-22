@@ -21,6 +21,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
 
         private MySqlConnection connection;
 
+        /// <summary>
+        /// Logging in
+        /// </summary>
         internal Employee LogIn(string login, string password)
         {
            
@@ -48,6 +51,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return null;
         }
 
+        /// <summary>
+        /// Adds new worker to database
+        /// </summary>
         internal void AddEmployeeToBase(Employee employee, bool isAdmin)
         {
             string query = string.Format("insert into employee(name, surname, pesel, login, password, is_admin) " +
@@ -62,6 +68,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             command.ExecuteScalar();
         }
 
+        /// <summary>
+        /// Gets list of clients from database whose debt > 0
+        /// </summary>
         internal List<Client> GetDebtors()
         {
             List<Client> ans = new List<Client>();
@@ -78,6 +87,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return ans;
         }
 
+        /// <summary>
+        /// Deletes client from database
+        /// </summary>
         internal void DeleteClient(Client client)
         {
             string query = "delete from client where passport='" + client.Passport + "';";
@@ -85,12 +97,18 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             command.ExecuteScalar();
         }
 
+        /// <summary>
+        /// Executes SQL-query
+        /// </summary>
         public void ExecuteQuery(string query)
         {
             MySqlCommand command = new MySqlCommand(query, connection);
             command.ExecuteScalar();
         }
 
+        /// <summary>
+        /// Gets list of workers from database
+        /// </summary>
         internal List<Employee> GetEmployees()
         {
             List<Employee> ans = new List<Employee>();
@@ -114,6 +132,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return ans;
         }
 
+        /// <summary>
+        /// Update balance from database
+        /// </summary>
         public Balance GetBalance()
         {
             string query = "select * from balance";
@@ -128,6 +149,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             return Balance.Instance;
         }
 
+        /// <summary>
+        /// Gets list of clients from database
+        /// </summary>
         internal List<Client> GetClients()
         {
             List<Client> ans = new List<Client>();
@@ -150,6 +174,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
         {
         }
 
+        /// <summary>
+        /// Opens connection to database configured in configure.txt
+        /// </summary>
         internal void Init()
         {
             InitInfo();
@@ -161,7 +188,7 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             OpenConnection();
         }
 
-        internal void InitInfo()
+        private void InitInfo()
         {
             MemoryStream memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(File.ReadAllText(ConfigPath())));
             DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(DatabaseInfo));
@@ -229,6 +256,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
 
         internal static Database DB { get => _database; }
 
+        /// <summary>
+        /// Adds delta to client in parameters
+        /// </summary>
         internal void ChangeDebt(Client client, float delta)
         {
             client.Debt += delta;
@@ -240,6 +270,9 @@ namespace Microcredit_System.ControlSystem.DatabaseStuff
             Balance.Instance.AddDeltaToPln(-delta);
         }
 
+        /// <summary>
+        /// Adding client to database
+        /// </summary>
         internal void AddClientToBase(Client client)
         {
             /*
